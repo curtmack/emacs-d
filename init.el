@@ -103,6 +103,7 @@
    (quote
     ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
  '(indent-tabs-mode nil)
+ '(inferior-lisp-program "sbcl")
  '(inhibit-startup-screen t)
  '(linum-relative-current-symbol "")
  '(magit-diff-use-overlays nil)
@@ -114,12 +115,14 @@
  '(nxml-outline-child-indent 4)
  '(package-selected-packages
    (quote
-    (web-mode csv-mode helm-ag magit company-c-headers company- shrink-whitespace rainbow-delimiters rainbow-delimeters anzu linum-relative s pos-tip popwin popup dash-functional dash)))
+    (mew stumpwm-mode slime-volleyball slime slime-company web-mode csv-mode helm-ag magit company-c-headers company- shrink-whitespace rainbow-delimiters rainbow-delimeters anzu linum-relative s pos-tip popwin popup dash-functional dash)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(safe-local-variable-values
    (quote
-    ((company-clang-arguments "--std=gnu99")
+    ((company-clang-arguments "-std=gnu11" "-pthread" "-I/usr/include/guile/2.0" "-lguile-2.0" "-lgc" "-lgcrypt")
+     (company-clang-arguments "-pthread" "-I/usr/include/guile/2.0" "-lguile-2.0" "-lgc" "-lgcrypt")
+     (company-clang-arguments "--std=gnu99")
      (company-clang-arguments "--std=gnu17")
      (company-clang-arguments . "gnu17")
      (comment-end-skip)
@@ -169,3 +172,4 @@
  '(default ((t (:inherit nil :stipple nil :background "#fdf6e3" :foreground "#657b83" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 105 :width normal :foundry "fsdf" :family "PragmataPro Mono"))))
  '(markdown-code-face ((t nil)))
  '(mode-line ((t (:background "#eee8d5" :foreground "#586e75" :inverse-video t :box nil :weight bold)))))
+(put 'upcase-region 'disabled nil)
