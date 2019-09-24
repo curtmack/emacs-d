@@ -1,6 +1,9 @@
+;;; HACK: Temporary workaround for debbug 34341
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 ;;; Initialize package.el
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
 ;;; Add all site-lisp packages to the load path
