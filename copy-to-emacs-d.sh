@@ -14,7 +14,7 @@ case "$response" in
         # Try rsync for speed, if not fallback to rm -rf and replace
         if command -v rsync > /dev/null
         then
-            rsync -rv -f '+ init.el' -f '+ site-lisp/' -f '+ conf.d/' -f '- **' ./ $HOME/.emacs.d/
+            rsync -av -f '+ init.el' -f '+ site-lisp/' -f '+ site-lisp/**' -f '+ conf.d/' -f '+ conf.d/**' -f '- **' ./ $HOME/.emacs.d/
         else
             echo "Notice: rsync not found, falling back to `rm -rf` and `cp -R`"
             for file in init.el site-lisp conf.d
